@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+html {
+  --darker-blue: hsl(217, 19%, 35%);
+  --dark-blue: hsl(214, 17%, 51%);
+  --gray-blue: hsl(212, 23%, 69%);
+  --light-blue: hsl(210, 46%, 95%);
+  --manrope: "Manrope", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-family: var(--manrope);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-blue);
+}
+
+.main {
+  width: 375px;
+  max-height: 550px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.25);
+}
+
+.image {
+  width: 100%;
+  height: 225px;
+  background-color: white;
+  background-image: url("/images/drawers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.info {
+  width: 100%;
+  max-height: 310px;
+}
+
+.info_text {
+  padding: 30px 30px 5px 30px;
+}
+
+.info_text_main > h2 {
+  font-size: 1.2rem;
+  line-height: 2.1rem;
+  color: var(--darker-blue);
+}
+
+.info_text_sub > p {
+  color: var(--dark-blue);
+  font-size: 1rem;
+  padding-top: 10px;
+  line-height: 1.7rem;
+}
+
+.info_profile {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px 10px 30px;
+  width: 100%;
+}
+
+.profile_data {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_name {
+  font-weight: 700;
+  color: var(--darker-blue);
+}
+
+.profile_date {
+  color: var(--dark-blue);
+}
+
+.btn {
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
+  z-index: 100;
+}
+
+.btn > button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+.btn > button.active {
+  background-color: var(--dark-blue);
+}
+
+.info_profile_img > img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  background-color: var(--darker-blue);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  border-radius: 0 0 10px 10px;
+  visibility: hidden;
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.25);
+}
+
+.share_name {
+  letter-spacing: 5px;
+  margin-right: 15px;
+  color: var(--dark-blue);
+}
+
+.share_bar {
+  display: flex;
+  justify-content: center;
+}
+
+.share_bar > img {
+  margin-right: 20px;
+}
+
+.share.active {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  background-color: var(--darker-blue);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  border-radius: 0 0 10px 10px;
+  visibility: visible;
+  animation: opacity 0.5s;
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main {
+    width: 750px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .image {
+    width: 65%;
+    height: 300px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .info {
+    width: 100%;
+    height: 100%;
+  }
+
+  .info_text {
+    padding: 40px 40px 10px 35px;
+  }
+
+  .info_text_main > h2 {
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+  }
+
+  .info_text_sub > p {
+    font-size: 1.1rem;
+  }
+
+  .info_profile {
+    position: relative;
+  }
+
+  .btn {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darker-blue);
+    position: absolute;
+    left: 270px;
+    bottom: 80px;
+    width: 260px;
+    height: 50px;
+    border-radius: 10px;
+    visibility: hidden;
+  }
+
+  .share.active-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darker-blue);
+    position: absolute;
+    left: 270px;
+    bottom: 80px;
+    width: 260px;
+    height: 50px;
+    border-radius: 10px;
+    visibility: visible;
+    animation: bottomToTop 1s;
+    box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.25);
+  }
+
+  @keyframes bottomToTop {
+    0% {
+      bottom: 0px;
+    }
+    100% {
+      bottom: 80px;
+    }
+  }
+
+  .share_name {
+    font-size: 2rem;
+    margin-left: 20px;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: -15px;
+    width: 0;
+    height: 0;
+    border-top: 18px solid var(--darker-blue);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+  }
+}
