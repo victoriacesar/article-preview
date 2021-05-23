@@ -17,9 +17,12 @@ const showShareBarMobile = () => {
 }
 
 const showShareBarDesktop = () => {
+  if(shareBar.classList.contains('active')){
+    shareBar.classList.remove('active');
+  }
   shareBtn.classList.toggle('active-desktop')
   shareBar.classList.toggle('active-desktop')
-  changeBtnImg(shareBtn, 'images/icon-share-active.svg', 'active')
+  changeBtnImg(shareBtn, 'images/icon-share-active.svg', 'active-desktop')
 }
 
 shareBtn.addEventListener('click', () => {
